@@ -1,0 +1,6 @@
+[packages]
+click="*"
+Flask="*"
+
+[requires]
+python_version="3"
