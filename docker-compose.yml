@@ -1,5 +1,6 @@
 version: '3'
 services:
+  # port number determines sleep time (e.g.: 5001 is 1 second of sleep time)
   two:
     build: .
     ports:

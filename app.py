@@ -1,6 +1,6 @@
 import os
 import time
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
@@ -8,8 +8,9 @@ app = Flask(__name__)
 def root():
     return jsonify(message="hello")
 
-@app.route('/sleep/<sleep_time>')
-def sleep(sleep_time):
+@app.route('/sleep')
+def sleep():
+    sleep_time = request.host.split(':')[-1][-1]
     time.sleep(int(sleep_time))
     return jsonify(appname="app1",
                    sleeptime=sleep_time)
