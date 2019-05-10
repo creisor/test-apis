@@ -12,5 +12,5 @@ def root():
 def sleep():
     sleep_time = request.host.split(':')[-1][-1]
     time.sleep(int(sleep_time))
-    return jsonify(appname="app1",
+    return jsonify(appname="app{}".format(sleep_time),
                    sleeptime=sleep_time)
